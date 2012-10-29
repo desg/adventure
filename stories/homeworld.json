@@ -1,0 +1,55 @@
+{
+	"Title": "An Adagio for Strings",
+	"Description": "The last pilgrimage of humankind embarks on an epic space voyage to find a new homeworld. A single admiral has been entrusted with the security of the twenty three ship fleet. You are that admiral. Can you find the will to survive and the strength to fight against your enemies? Will you lead the men and women of your command to a new home?",
+	"Questions": [
+		{
+			"Id": "root",
+			"Query": "The fleet comes out of hyperjump. The world you left has been annihilated. You stand at the helm of the most powerful warship humanity has endeavored to create. It is a behemoth feared by even the conquerers of your former home. Under your command are ten cruisers and twenty two civilian transports carrying the remnants of mankind. A single transport has a maximum personnel capacity of forty five thousand. A million civilian crew in total among the fleet. Twenty thousand military personnel. Thousands of alien battleships scouring the local system to finish off the fight they started. What is your command?",
+			"Choices": [
+				{
+					"Name": "Full post-jump fleet report",
+					"Event": "All fleet reports nominal status."
+				},
+				{
+					"Name": "Full scan of the surrounding space",
+					"Event": "Scans report empty space in every direction."
+				},
+				{
+					"Name": "Charter a course to the nearest system.",
+					"Event": "Fleet navigation finds a course to a nearby system. The journey to find a new home begins.",
+					"Destination": "localsystem"
+				},
+				{
+					"Name": "Return home",
+					"Event": "You have abandoned humanity in its time of dire. You order the fleet to jump back and fight. Your fleet exits hyperjump to the face of an alien armada opening missile battery at all fleet ships. All civilian ships destroyed in the initial barrage. Heavy cruiser loss. Mothership takes heavy damage to all systems. Engineering, weapons, and shield facilities destroyed. Engines destroyed. Life support offline. An ion cannon rips through the main deck and the vacuum of space sucks the bridge and its crew into the dark.",
+					"MilitaryLoss": 10,
+					"CivilianLoss": 22,
+					"MothershipLoss": true
+				},
+				{
+					"Name": "Scuttle the fleet",
+					"Event": "Your order to scuttle the fleet is unquestioned. Humanity evaporates in the ensuing blast.",
+					"MilitaryLoss": 10,
+					"CivilianLoss": 22,
+					"MothershipLoss": true
+				}
+			]
+		},
+		{
+			"Id": "localsystem",
+			"Query": "Fleet arrives in new system of planets. Scans indicate all uninhabitable. Terraforming potential high. Distance from destroyed homeworld minimum. What is your command?",
+			"Choices": [
+				{
+					"Name": "Terraform the best potential planet and begin colonization.",
+					"Event": "Terraforming begins. An alien battalation exits hyperjump and opens fire on the terraformer while the fleet is on standby. Civilian casualties high. The fleet engages hyperjump.",
+					"CivilianLoss": 3,
+					"Destination": "escape"
+				}
+			]
+		},
+		{
+			"Id": "escape",
+			"Query": "The fleet has escaped total destruction and exits hyperjump inside a gas pocket. Radiation jams all scan systems"
+		}
+	]
+}
