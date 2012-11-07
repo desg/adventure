@@ -54,8 +54,7 @@ table {
 .lastUnit{float:none;width:auto;_position:relative;_left:-3px;_margin-right:-3px;}
 
 body{
-	background-color:#000;
-	color:#fff;
+	background-color: #f2f2f2;
 	font-family: sans-serif;
 	line-height:1.5;
 }
@@ -63,4 +62,27 @@ body{
 .title{
 	font-size:72px;
 	font-family:Impact;
+}
+
+.set{
+	border: 1px solid #ddd;
+	margin: 12px;
+	padding: 12px;
+}
+.answer{
+	margin-bottom: 12px;
+}
+.choicetext{
+
+}
+.eventtext{
+
+}
+.query{
+	font-weight: bold;
+}
+.choice-list{
+	list-style-type: decimal;
+	padding-left: 24px;
+	margin-top: 12px;
 }
