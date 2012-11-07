@@ -1,9 +1,9 @@
 package server
 
-import "net/http"
-
-const Root = ""
+import (
+	"net/http"
+)
 
 func init() {
-	http.Handle("/", http.FileServer(http.Dir(Root+"/public")))
+	http.Handle("/", http.FileServer(http.Dir("public")))
 }
