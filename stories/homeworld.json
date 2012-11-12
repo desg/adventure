@@ -15,7 +15,7 @@
 					"Event": "Scans report empty space in every direction."
 				},
 				{
-					"Name": "Charter a course to the nearest system.",
+					"Name": "Chart a course to the nearest system.",
 					"Event": "Fleet navigation finds a course to a nearby system. The journey to find a new home begins.",
 					"To": "localsystem"
 				},
