@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="main.css">
+<script src="jquery.js"></script>
+<script src="main.js"></script>
 
 <div class="content">
 	<h1 class="title">{{.Title}}</h1>
-	<p class="description">{{.Description}}</p>
+	<p class="mod bb description">{{.Description}}</p>
+
+	<p class="mod" id="event-text">>> </p>
 
 	{{range .Questions}}
-	<div class="question" id="{{.Id}}">
-		<div class="description">{{.Query}}</div>
+	<div class="mod question" id="{{.Id}}">
+		<div class="mod description">>> {{.Query}}</div>
 		<ol class="choices">
 			{{range .Choices}}
-			<li class="choice"><a href="#" data-to="{{.To}}" data-from="{{.From}}" data-event="{{.Event}}">{{.Name}}</a></li>
+			<li class="choice">
+				<a href="" data-to="{{.To}}" data-from="{{.From}}" data-event="{{.Event}}">{{.Name}}</a>
+			</li>
 			{{end}}
 		</ol>
 	</div>
