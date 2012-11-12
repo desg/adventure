@@ -55,36 +55,36 @@ table {
 
 body {
 	line-height:1.5;
-	font-family:sans-serif;
-	background-color:#f2f2f2;
+	color:#f9f9f9;
+	font-family: "Courier New";
+	background-color:#222;
 }
 
 .content{
-	max-width:960px;
+	max-width:640px;
 	margin-left:auto;
 	margin-right:auto;
 }
-
 .title{
 	font-family:Impact;
 	font-size:100px;
 	text-transform:uppercase;
 }
+.question {display:none;}
+.description {font-style:italic;}
+.choices {list-style-type:decimal-leading-zero;}
+.choice {}
+.mod{margin-bottom:24px;}
 
-.question {
-	margin-bottom:24px;
+a {
+	text-decoration: none;
+	color: #AEC844;
 }
+a:link,
+a:visited {}
+a:hover {color: white;}
 
-.description {
-	font-style:italic;
-}
-
-.choices {
-	font-family:Consolas;
-	list-style-type:decimal-leading-zero;
-	padding-left:36px;
-}
-
-.choice {
-	font-family:sans-serif;
+.bb{
+	padding-bottom:4px;
+	border-bottom: 1px dotted #333;
 }
