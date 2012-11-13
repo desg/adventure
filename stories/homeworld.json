@@ -1,6 +1,8 @@
 {
 	"Title": "Homeworld",
 	"Description": "The last pilgrimage of humankind embarks on an epic space voyage to find a new homeworld. A single admiral has been entrusted with the security of the twenty three ship fleet. You are that admiral. Can you find the will to survive and the strength to fight against your enemies? Will you lead the men and women of your command to a new home?",
+	"CivilianStart": 22,
+	"MilitaryStart": 10,
 	"Questions": [
 		{
 			"Id": "root",

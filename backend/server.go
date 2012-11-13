@@ -9,10 +9,12 @@ import (
 )
 
 type Story struct {
-	Choices     []*Choice
-	Description string
-	Questions   []*Question
-	Title       string
+	Choices       []*Choice
+	CivilianStart int
+	Description   string
+	MilitaryStart int
+	Questions     []*Question
+	Title         string
 }
 
 type Question struct {
@@ -22,10 +24,13 @@ type Question struct {
 }
 
 type Choice struct {
-	Event string
-	From  string
-	Name  string
-	To    string
+	CivilianLoss   int
+	Event          string
+	From           string
+	MilitaryLoss   int
+	MothershipLoss bool
+	Name           string
+	To             string
 }
 
 func NewStory(filename string) *Story {
