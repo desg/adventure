@@ -1,30 +1,61 @@
 $(document).ready(function () {
+	"use strict";
+
+	var $choices       = $("#choices"),
+	    $civilianCount = $("#civilian-status"),
+	    $eventArea     = $("#event-text"),
+	    $history       = $("#history"),
+	    $militaryCount = $("#military-status"),
+	    $mothership    = $("#mothership-status"),
+	    $restart       = $("#restart"),
+	    totalMilitary  = $civilianCount.text(),
+	    totalCivilian  = $militaryCount.text();
+
+	function gameOver() {
+		$mothership.text("Destroyed");
+		$(".question").hide();
+		$(".choices").hide();
+		$restart.fadeIn(1000);
+	}
+
 	$("#root").fadeIn(500);
 
-	var $militaryCount = $("#military-status"),
-	    $civilianCount = $("#civilian-status"),
-	    $history       = $("#history"),
-	    $eventArea     = $("#event-text");
-
-	$('a').click(function (event) {
+	$('a.choice').click(function (event) {
 		event.preventDefault();
 		var choice  = $(this),
 		    fromId  = choice.attr("data-from"),
 		    toId    = choice.attr("data-to"),
 		    action  = choice.attr("data-event"),
 		    milLoss = choice.attr("data-mil-loss"),
-		    civLoss = choice.attr("data-civ-loss");
+		    civLoss = choice.attr("data-civ-loss"),
+		    boom    = choice.attr("data-mothership-boom"),
 
-		var $from = $("#" + fromId),
-		    $to   = $("#" + toId);
+		    $from = $("#" + fromId),
+		    $to   = $("#" + toId),
 
-		var currentCivilian = $civilianCount.text(),
+		    currentCivilian = $civilianCount.text(),
 		    currentMilitary = $militaryCount.text();
 
 		choice.parent().remove();
-		$militaryCount.text(currentMilitary - milLoss);
-		$civilianCount.text(currentCivilian - civLoss);
+
+		totalMilitary = currentMilitary - milLoss;
+		if (totalMilitary < 0) {
+			totalMilitary = 0;
+		}
+
+		totalCivilian = currentCivilian - civLoss;
+		if (totalCivilian < 0) {
+			totalCivilian = 0;
+		}
+
+		if (boom === "true") {
+			gameOver();
+		}
+
+		$militaryCount.text(totalMilitary);
+		$civilianCount.text(totalCivilian);
 		$eventArea.text(">> " + action);
+
 		if (toId) {
 			$from.fadeOut(0);
 			$to.fadeIn(800);
