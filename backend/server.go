@@ -60,11 +60,11 @@ func init() {
 }
 
 func foo(w http.ResponseWriter, r *http.Request) {
-	homeworld := NewStory("stories/homeworld.json")
+	thunderstroke := NewStory("stories/thunderstroke.json")
 
 	t, err := template.ParseFiles("templates/foo.html")
 	if err != nil {
 		fmt.Fprint(w, err)
 	}
-	t.Execute(w, homeworld)
+	t.Execute(w, thunderstroke)
 }
